@@ -103,7 +103,8 @@ nav ul li {
 }
 
 .skill-header {
-    margin-bottom: 1rem;
+    margin-top: 4rem;
+    margin-bottom: 2rem;
 }
 
 .skills-wrapper img {
@@ -147,7 +148,8 @@ nav ul li {
 
 .projects-title {
     text-align: center;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
 }
 
 .project-title {
@@ -160,7 +162,8 @@ nav ul li {
 
 .in-touch {
     text-align: center;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
 }
 
 footer {

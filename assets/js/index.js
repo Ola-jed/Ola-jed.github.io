@@ -7,7 +7,7 @@ const showHighlightEffect = function (element) {
     const from = '#621aa4';
     const to = '#000000';
     this.style.background = `-webkit-gradient(radial, ${xy}, 0, ${xy}, 50, from(${from}), to(${to})), ${originalBG}`;
-}
+};
 
 const removeHighlightEffect = function () {
     this.style.background = originalBG;
