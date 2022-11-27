@@ -12,6 +12,7 @@
     --bottom-margin-2: 1rem;
     --line-height: 1.7rem;
     --transition: 0.3s;
+    --border-radius: 1rem;
 }
 
 html {
@@ -81,10 +82,11 @@ nav ul li {
 }
 
 #about {
-    width: 25rem;
+    width: 28rem;
     margin: 2rem auto;
     padding: 0.625rem;
     box-shadow: 0 2px 5px var(--secondary-shadow);
+    border-radius: var(--border-radius);
 }
 
 #about h1 {
@@ -121,6 +123,7 @@ nav ul li {
     padding: 20px;
     margin: 10px;
     border: 1px solid var(--secondary-shadow);
+    border-radius: var(--border-radius);
 }
 
 .projects {
