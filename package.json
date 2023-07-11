@@ -1,6 +1,7 @@
 {
   "name": "ola-jed-github-io",
   "type": "module",
+  "license": "Unlicense",
   "version": "1.0.0",
   "scripts": {
     "dev": "astro dev",

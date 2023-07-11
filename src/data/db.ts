@@ -27,8 +27,8 @@ export const db = {
             name: "PHP",
             icon: "php.svg"
         }, {
-            name: "C++",
-            icon: "cpp.svg"
+            name: "Java",
+            icon: "java.svg"
         }, {
             name: "Kotlin",
             icon: "kotlin.svg"
@@ -38,9 +38,6 @@ export const db = {
         }, {
             name: "Laravel",
             icon: "laravel.svg"
-        }, {
-            name: "Qt",
-            icon: "qt.svg"
         }
     ],
     tools: [
@@ -48,8 +45,8 @@ export const db = {
             name: "Docker",
             icon: "docker.svg"
         }, {
-            name: "Microsoft Azure",
-            icon: "az.svg"
+            name: "Rabbitmq",
+            icon: "rabbitmq.svg"
         }, {
             name: "PostgreSQL",
             icon: "pg.svg"
