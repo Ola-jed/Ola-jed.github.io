@@ -1,0 +1,14 @@
+---
+import {Contact} from "../dtos";
+
+export interface Props {
+    contact: Contact;
+}
+
+const {contact} = Astro.props;
+---
+<div class="contact-container-card">
+    <a href={contact.link} target="_blank" title={contact.title}>
+        {contact.label}
+    </a>
+</div>

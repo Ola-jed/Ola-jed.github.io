@@ -1,0 +1,68 @@
+---
+import Layout from '../layouts/Layout.astro';
+import {Contact, Project, Skill} from "../dtos";
+import ProjectCard from "../components/ProjectCard.astro";
+import SkillCard from "../components/SkillCard.astro";
+import Footer from "../components/Footer.astro";
+import NavItem from "../components/NavItem.astro";
+import ContactItem from "../components/ContactItem.astro";
+import {db} from "../data/db";
+
+const projects: Project[] = db.projects;
+const languages: Skill[] = db.languages;
+const tools: Skill[] = db.tools;
+const navItems = db.navItems;
+const contacts: Contact[] = db.contacts;
+---
+
+<Layout title="Olabissi Gbangboche">
+    <a id="top"></a>
+    <nav>
+        <h1>Olabissi Gbangboche</h1>
+        <ul class="navigation">
+            {navItems.map((item) => (
+                    <NavItem label={item} destination={item.toLowerCase()}/>
+            ))}
+        </ul>
+    </nav>
+    <section id="about">
+        <h2 class="bio-title">About Me</h2>
+        <p class="bio-text">
+            I am Olabissi Gbangboche, a Beninese software developer. I am mostly interested in backend development and
+            desktop development.
+        </p>
+    </section>
+    <section class="skills" id="skills">
+        <h2 class="skill-header">The programming languages and frameworks I use the most</h2>
+        <div class="skills-wrapper">
+            {languages.map((language) => (
+                    <SkillCard skill={language}/>
+            ))}
+        </div>
+        <h2 class="skill-header other">Other tools that I use</h2>
+        <div class="skills-wrapper">
+            {tools.map((tool) => (
+                    <SkillCard skill={tool}/>
+            ))}
+        </div>
+    </section>
+    <section class="projects" id="projects">
+        <h2 class="projects-title">Some of my Recent Projects</h2>
+        <div class="projects-container">
+            {projects.map((project) => (
+                    <ProjectCard project={project}/>
+            ))}
+        </div>
+    </section>
+    <section class="contact" id="contact">
+        <h2 class="in-touch">Get in touch with me</h2>
+        <div class="contacts-container">
+            {contacts.map((contact) => (
+                    <ContactItem contact={contact}/>
+            ))}
+        </div>
+    </section>
+    <hr>
+    <Footer/>
+    <a href="#top"><i class="scroll-up"><img src="up.svg" alt="Scroll up" class="up-arrow"></i></a>
+</Layout>

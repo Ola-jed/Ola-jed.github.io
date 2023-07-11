@@ -1,0 +1,10 @@
+---
+import {Skill} from "../dtos";
+export interface Props {
+    skill: Skill;
+}
+
+const {skill} = Astro.props;
+---
+
+<img src={skill.icon} alt={`${skill.name} logo`} class="icon icon-card card" title={skill.name} />
