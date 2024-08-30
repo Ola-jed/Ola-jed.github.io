@@ -2,6 +2,10 @@ export const db = {
     navItems: ["About", "Skills", "Projects", "Contact"],
     projects: [
         {
+            title: "yaupl",
+            description: "An interpreted language written in Kotlin",
+            link: "https://github.com/Ola-jed/yaupl"
+        }, {
             title: "Recover Unsold",
             description: "A mobile application (Android only) to help for the recover of unsold goods; written using Jetpack Compose",
             link: "https://github.com/Ola-jed/RecoverUnsold"
@@ -13,10 +17,6 @@ export const db = {
             title: "FluentPaginator",
             description: "A simple library for pagination of data in .Net Core",
             link: "https://github.com/Ola-jed/FluentPaginator"
-        }, {
-            title: "Vue.Splash API",
-            description: "An API for an unsplash clone, written in C#",
-            link: "https://github.com/Ola-jed/Vue.Splash-API"
         }
     ],
     languages: [
