@@ -1,18 +1,20 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import {Contact, Project, Skill} from "../dtos";
+import Layout from "../layouts/Layout.astro";
+import {Contact, Education, Project, Skill} from "../dtos";
 import ProjectCard from "../components/ProjectCard.astro";
 import SkillCard from "../components/SkillCard.astro";
 import Footer from "../components/Footer.astro";
 import NavItem from "../components/NavItem.astro";
 import ContactItem from "../components/ContactItem.astro";
 import {db} from "../data/db";
+import EducationCard from "../components/EducationCard.astro";
 
 const projects: Project[] = db.projects;
 const languages: Skill[] = db.languages;
 const tools: Skill[] = db.tools;
 const navItems = db.navItems;
 const contacts: Contact[] = db.contacts;
+const education: Education[] = db.education;
 ---
 
 <Layout title="Olabissi Gbangboche">
@@ -26,28 +28,39 @@ const contacts: Contact[] = db.contacts;
         </ul>
     </nav>
     <section id="about">
-        <h2 class="bio-title">About Me</h2>
+        <h3 class="bio-title">About</h3>
         <p class="bio-text">
-            I am Olabissi Gbangboche, a 21 years old Beninese software developer.
-            I am mostly interested in software development, and programming languages
+            I am Olabissi Gbangboche, a 22 years old software developer from Benin.
+            My interests include algorithms, reinforcement learning and programming languages.
         </p>
+    </section>
+    <section class="education">
+        <h2 class="projects-title">Education</h2>
+
+        <div class="projects-container">
+            {education.map((item) => (
+                    <EducationCard education={item} />
+            ))}
+        </div>
     </section>
     <section class="skills" id="skills">
         <h2 class="skill-header">The programming languages and frameworks I use the most</h2>
-        <div class="skills-wrapper">
+        <div class="skills-container">
             {languages.map((language) => (
                     <SkillCard skill={language}/>
             ))}
         </div>
+
         <h2 class="skill-header other">Other tools that I use</h2>
-        <div class="skills-wrapper">
+        <div class="skills-container">
             {tools.map((tool) => (
                     <SkillCard skill={tool}/>
             ))}
         </div>
+
     </section>
     <section class="projects" id="projects">
-        <h2 class="projects-title">Some of my Recent Projects</h2>
+        <h2 class="projects-title">Some of my recent projects</h2>
         <div class="projects-container">
             {projects.map((project) => (
                     <ProjectCard project={project}/>
@@ -62,7 +75,10 @@ const contacts: Contact[] = db.contacts;
             ))}
         </div>
     </section>
-    <hr>
     <Footer/>
-    <a href="#top"><i class="scroll-up"><img src="up.svg" alt="Scroll up" class="up-arrow"></i></a>
+    <a href="#top" id="scrollUp">
+        <i class="scroll-up">
+            <img src="up.svg" alt="Scroll up" class="up-arrow">
+        </i>
+    </a>
 </Layout>

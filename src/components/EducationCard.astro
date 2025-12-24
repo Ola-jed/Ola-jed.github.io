@@ -1,0 +1,21 @@
+---
+import type {Education} from "../dtos";
+
+export interface Props {
+    education: Education;
+}
+
+const {education} = Astro.props;
+---
+
+<div class="education-container card">
+    <h3 class="education-title">{education.title}</h3>
+
+    <p class="education-school">
+        <a href={education.link} target="_blank" rel="noopener noreferrer">
+            {education.school}
+        </a>
+    </p>
+
+    <p class="education-period">{education.period}</p>
+</div>

@@ -17,6 +17,13 @@ export interface Experience {
     enterpriseLogo ?: string;
 }
 
+export interface Education {
+    title: string;
+    school: string;
+    link: string;
+    period: string;
+}
+
 export interface Contact {
     label: string;
     title: string;
