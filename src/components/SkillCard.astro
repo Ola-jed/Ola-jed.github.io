@@ -1,5 +1,5 @@
 ---
-import {Skill} from "../dtos";
+import type {Skill} from "../dtos";
 
 export interface Props {
     skill: Skill;
@@ -8,7 +8,7 @@ export interface Props {
 const {skill} = Astro.props;
 ---
 
-<div class="skill-container card">
+<div class="skill-container">
     <img
             src={skill.icon}
             alt={`${skill.name} logo`}

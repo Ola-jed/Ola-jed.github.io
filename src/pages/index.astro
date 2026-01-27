@@ -1,6 +1,5 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import {Contact, Education, Project, Skill} from "../dtos";
 import ProjectCard from "../components/ProjectCard.astro";
 import SkillCard from "../components/SkillCard.astro";
 import Footer from "../components/Footer.astro";
@@ -9,12 +8,14 @@ import ContactItem from "../components/ContactItem.astro";
 import {db} from "../data/db";
 import EducationCard from "../components/EducationCard.astro";
 
-const projects: Project[] = db.projects;
-const languages: Skill[] = db.languages;
-const tools: Skill[] = db.tools;
-const navItems = db.navItems;
-const contacts: Contact[] = db.contacts;
-const education: Education[] = db.education;
+const {
+    navItems,
+    education,
+    projects,
+    languages,
+    tools,
+    contacts,
+} = db;
 ---
 
 <Layout title="Olabissi Gbangboche">
@@ -44,14 +45,14 @@ const education: Education[] = db.education;
         </div>
     </section>
     <section class="skills" id="skills">
-        <h2 class="skill-header">The programming languages and frameworks I use the most</h2>
+        <h2 class="skill-header">Programming languages and frameworks</h2>
         <div class="skills-container">
             {languages.map((language) => (
                     <SkillCard skill={language}/>
             ))}
         </div>
 
-        <h2 class="skill-header other">Other tools that I use</h2>
+        <h2 class="skill-header other">Other tools</h2>
         <div class="skills-container">
             {tools.map((tool) => (
                     <SkillCard skill={tool}/>
