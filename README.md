@@ -1,1 +1,0 @@
-Small portfolio/presentation page (re)written using [Astro](https://astro.build/)
