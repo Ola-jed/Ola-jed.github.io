@@ -1,0 +1,235 @@
+baseURL = 'https://minimal-black-demo.netlify.app'
+languageCode = 'en-us'
+title = 'Olabissi Gbangboche'
+theme = "minimal-black"
+
+# Enable search index generation and web app manifest
+[outputs]
+  home = ["HTML", "RSS", "JSON", "WebAppManifest"]
+
+[outputFormats.WebAppManifest]
+  mediaType = "application/manifest+json"
+  rel = "manifest"
+  baseName = "manifest"
+  isPlainText = true
+  notAlternative = true
+
+[params]
+  brand = "Olabissi Gbangboche"
+  description = "Small presentation website"
+
+  # Favicon - Place your favicon files in /static/ directory
+  # Supported formats: .ico, .png, .svg
+  favicon = "icons/favicon.svg"
+  appleTouchIcon = "apple-touch-icon.png"
+
+  # Logo (optional)
+  logo = "images/logo.png"
+
+  # Project and blog intro text
+  projectsIntro = "Selected projects to display list." # Can be empty
+  blogIntro = "" # Can be empty
+
+  # Web App Manifest Configuration (PWA support)
+  [params.manifest]
+    themeColor = "#a855f7"
+    backgroundColor = "#000000"
+    categories = ["blog", "portfolio", "developer"]
+
+    # Custom icon configuration (optional)
+    # If not specified, defaults to /icons/android-chrome-*.png
+    # [[params.manifest.icons]]
+    #   src = "/icons/android-chrome-192x192.png"
+    #   sizes = "192x192"
+    #   type = "image/png"
+    #   purpose = "any maskable"
+
+  # Theme Configuration
+  [params.theme]
+    defaultTheme = "system"
+
+  # Home Page Configuration
+  [params.home]
+    sections = ["hero", "now", "tech-marquee", "projects"]
+    showNowSection = true
+    showFeaturedProjects = true
+    showLatestPosts = true
+    featuredProjectsLimit = 3
+    latestPostsLimit = 3
+    projectsTitle = "Selected Work"
+    projectsSubtitle = ""
+    techMarqueeLabel = "Experienced In"
+
+    # Technology Stack Display
+    [[params.home.tech]]
+      label = "Python"
+      icon = "devicon-python-plain"
+
+    [[params.home.tech]]
+      label = "Java"
+      icon = "devicon-java-plain"
+
+    [[params.home.tech]]
+      label = "Kotlin"
+      icon = "devicon-kotlin-plain"
+
+    [[params.home.tech]]
+      label = "Spring"
+      icon = "devicon-spring-plain"  
+
+    [[params.home.tech]]
+      label = "C#"
+      icon = "devicon-csharp-plain"
+    
+    [[params.home.tech]]
+      label = "Dotnet"
+      icon = "devicon-dotnet-plain"
+
+    [[params.home.tech]]
+      label = "Docker"
+      icon = "devicon-docker-plain"
+
+    [[params.home.techReverse]]
+      label = "PostgreSQL"
+      icon = "devicon-postgresql-plain"
+
+    [[params.home.techReverse]]
+      label = "MySQL"
+      icon = "devicon-mysql-plain"
+
+    [[params.home.techReverse]]
+      label = "Git"
+      icon = "devicon-git-plain"
+
+    [[params.home.techReverse]]
+      label = "RabbitMQ"
+      icon = "devicon-rabbitmq-plain"
+
+    [[params.home.techReverse]]
+      label = "Linux"
+      icon = "devicon-linux-plain"             
+
+  # Hero Section Configuration
+  [params.hero]
+    badge = "Software Developer"
+    title = "Olabissi Gbangboche"
+    summary = "Software developer with interests in algorithms and RL."
+    location = "Abomey-Calavi, Benin"
+    nowIntro = "Right now I'm mainly:"
+    now = [
+        "Working on RL, especially policy gradients",
+        "Working on geremonstock, an ERP"
+    ]
+
+
+  
+    [params.hero.primary]
+      label = "View Projects"
+      href = "/projects/"
+
+  # Icon Libraries
+  [params.icons]
+    useFontAwesome = true
+    useDevicon = true
+
+  # Social Links
+  [[params.social]]
+    label = "GitHub"
+    url = "https://github.com/Ola-jed"
+    icon = "fa-brands fa-github"
+
+  [[params.social]]
+    label = "GitLab"
+    url = "https://gitlab.com/Ola-jed"
+    icon = "fa-brands fa-gitlab"
+
+  [[params.social]]
+    label = "LinkedIn"
+    url = "https://www.linkedin.com/in/olabissi-gbangboche/"
+    icon = "fa-brands fa-linkedin-in"
+
+  [[params.social]]
+    label = "Email"
+    url = "mailto:olabijed@gmail.com"
+    icon = "fa-regular fa-envelope"
+
+
+# Navigation Menu
+[menu]
+  [[menu.main]]
+    name = "Home"
+    pageRef = "/"
+    url = "/"
+    weight = 1
+    identifier = "home"
+    [menu.main.params]
+      icon = "fa-solid fa-house"
+
+  [[menu.main]]
+    name = "About"
+    pageRef = "about"
+    url = "/about/"
+    weight = 2
+    identifier = "about"
+    [menu.main.params]
+      icon = "fa-regular fa-user"
+
+  [[menu.main]]
+    name = "Projects"
+    pageRef = "projects"
+    url = "/projects/"
+    weight = 3
+    identifier = "projects"
+    [menu.main.params]
+      icon = "fa-regular fa-folder-open"
+
+# Markup Configuration
+[markup]
+  # Table of Contents
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 4
+
+  # Goldmark Renderer (Markdown)
+  [markup.goldmark.renderer]
+    unsafe = true
+
+  [markup.goldmark.parser]
+      [markup.goldmark.parser.attribute]
+        block = true
+
+  [markup.goldmark.extensions]
+    typographer = true
+    linkify = true
+    table = true
+    strikethrough = true
+    taskList = true
+    definitionList = true
+    footnote = true
+
+    [markup.goldmark.extensions.extras.delete]
+      enable = true
+    [markup.goldmark.extensions.extras.insert]
+      enable = true
+    [markup.goldmark.extensions.extras.mark]
+      enable = true
+
+  # Syntax Highlighting
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = true
+    lineNos = false
+    lineNumbersInTable = false
+    noClasses = false
+    style = "monokai"
+    tabWidth = 2
+
+# Taxonomies
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+# Privacy Configuration
+[privacy]
+  [privacy.youtube]
+    privacyEnhanced = true
