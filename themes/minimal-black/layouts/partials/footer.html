@@ -1,0 +1,56 @@
+<footer class="pb-6 pt-10">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6">
+    <div class="footer-shell">
+      <div class="footer-inner">
+        <!-- Left -->
+        <div class="space-y-1">
+          <p class="footer-small">
+            &copy; {{ now.Format "2006" }} {{ .Site.Title }} — All rights
+            reserved.
+          </p>
+
+          <p class="footer-small flex flex-wrap items-center gap-1">
+            <span>Built with</span>
+
+            <a
+              href="https://gohugo.io/"
+              class="footer-link footer-float link-underline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>Hugo</span>
+            </a>
+
+            <span>/</span>
+
+            <a
+              href="{{ .Site.Params.themeGit }}"
+              class="footer-link footer-float link-underline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>Minimal&nbsp;Black</span>
+            </a>
+          </p>
+        </div>
+
+        <!-- Right -->
+        {{ with .Site.Params.social }}
+        <div class="footer-links">
+          {{ range . }}
+          <a
+            href="{{ .url }}"
+            class="footer-link footer-float link-underline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="{{ .icon }} text-[0.8rem]"></i>
+            <span>{{ .label }}</span>
+          </a>
+          {{ end }}
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</footer>
